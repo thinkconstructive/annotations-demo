@@ -1,0 +1,41 @@
+#spring:
+#  application:
+#    name: annotations-demo
+#  profiles:
+#    active: prod
+#
+#db:
+#  connection:
+#    url: "jdbc:postgresql://localhost:5432/myapp"
+#    username: "user1"
+#    password: "pass1"
+#    pool-size: 30
+#
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: "dev"
+#db:
+#  connection:
+#    url: "jdbc:postgresql://devhost:5432/myapp"
+#    username: "devuser"
+#    password: "pass1"
+#    pool-size: 5
+#
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: "prod"
+#db:
+#  connection:
+#    url: "jdbc:postgresql://prodhost:5432/myapp"
+#    username: "produser"
+#    password: "pass1"
+#    pool-size: 25
+#
+#logging:
+#  level:
+#    org:
+#      springframework: DEBUG
