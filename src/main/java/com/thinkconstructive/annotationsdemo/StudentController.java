@@ -1,10 +1,6 @@
 package com.thinkconstructive.annotationsdemo;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +20,24 @@ public class StudentController {
     public List<Student> getStudent()
     {
         return studentService.getStudent();
+    }
+
+    @PostMapping("/")
+    public Student createStudent(@RequestBody Student student)
+    {
+        return studentService.createStudent(student);
+    }
+
+    @PutMapping("/{id}")
+    public Student updateStudent(@PathVariable Long id, @RequestBody Student student)
+    {
+        return studentService.updateStudent(id, student);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteStudent(@PathVariable Long id)
+    {
+        studentService.deleteStudent(id);
+        return "Student deleted successfully";
     }
 }
